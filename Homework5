@@ -1,0 +1,61 @@
+namespace Homework5Quest1d;
+using System;
+class HelloWorld
+{
+//method to return largest between two numbers
+public static int largest2()
+{
+int a, b, large;
+
+Console.WriteLine("Enter two numbers: ");
+a = Convert.ToInt32(Console.ReadLine());
+b = Convert.ToInt32(Console.ReadLine());
+
+if(a>b)
+large = a;
+else
+large = b;
+
+return large;
+}
+
+//method to return largest between two numbers
+public static int largest2Modified(int a, int b)
+{
+int large;
+
+if(a>b)
+large = a;
+else
+large = b;
+
+return large;
+}
+
+//method to return largest among four number
+public static int largest4()
+{
+//variable declaration
+int a, b, c, d, large;
+
+//get input
+Console.WriteLine("\n\nEnter four numbers: ");
+a = Convert.ToInt32(Console.ReadLine());
+b = Convert.ToInt32(Console.ReadLine());
+c = Convert.ToInt32(Console.ReadLine());
+d = Convert.ToInt32(Console.ReadLine());
+
+large = largest2Modified(largest2Modified(a, b), largest2Modified(c, d));
+
+return large;
+}
+
+static void Main()
+{
+int l2 = largest2();
+Console.Write("The largest number is: "+l2);
+
+int l4 = largest4();
+Console.Write("The largest number is: "+l4);
+}
+}
