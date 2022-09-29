@@ -1,0 +1,40 @@
+namespace Homework5Quest3d;
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        createAccount();
+    }
+    public static bool checkAge(int birth_year)
+    {
+        if ((2022 - birth_year) >= 18)
+        return true;
+        else
+        return false;
+    }
+    public static void createAccount()
+        {
+            Console.Write("Enter the userName: ");
+            string userName = Console.ReadLine();
+            Console.Write("Enter the password: ");
+            string password = Console.ReadLine();
+            Console.Write("Enter the password again: ");
+            string confirm_password = Console.ReadLine();
+            Console.Write("Enter the birth year: ");
+            int birth_year = Convert.ToInt32(Console.ReadLine());
+        if (checkAge(birth_year))
+        {
+            if (password==confirm_password)
+            Console.WriteLine("Account is created Successfully.");
+        else
+        Console.WriteLine("Wrong Password.");
+
+            }
+            else
+            {
+        Console.WriteLine("Could not create an account.");
+        }
+    }
+}
